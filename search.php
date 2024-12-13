@@ -13,16 +13,15 @@ foreach ($arr as $data) {
     if ($data['pref'] != $pref) {
         continue;
     }
-    if (!empty($selectPoint)){
+    if (!empty($selectPoint)) {
         $hotelPoints = isset($data['point']) && is_array($data['point']) ? $data['point'] : [];
         $matchPoints = !array_diff($selectPoint, $hotelPoints);
-        if (!$matchPoints){
+        if (!$matchPoints) {
             continue;
         }
     }
 
     $matchHotels[] = $data;
-
 }
 
 ?>
@@ -32,7 +31,7 @@ foreach ($arr as $data) {
 <main>
     <section class="archive">
         <?php if (empty($matchHotels)): ?>
-            <p>該当するホテルが見つかりませんでした。</p>
+            <p class="null_mes">該当するホテルが見つかりませんでした。</p>
         <?php else: ?>
             <?php foreach ($matchHotels as $data): ?>
                 <a href="detail.php?id=<?php echo $data['id']; ?>">
@@ -52,7 +51,12 @@ foreach ($arr as $data) {
                 </a>
             <?php endforeach; ?>
         <?php endif; ?>
+
     </section>
+    <div>
+        <p class="back"><a href="index.php">戻る</a></p>
+    </div>
+
 </main>
 
 <?php include('footer.php'); ?>
