@@ -52,7 +52,11 @@ file_put_contents($filePath, json_encode($existingData, JSON_UNESCAPED_UNICODE |
 <?php include('header.php'); ?>
 <main>
     <p class="complete">登録しました</p>
-    <p class="back"><a href="input.php">戻る</a></p>
+
+    <div>
+        <p class="back"><a href="input.php">戻る</a></p>
+        <p class="back"><a href="index.php">ページを確認する</a></p>
+    </div>
 
 </main>
 <?php include('footer.php'); ?>
