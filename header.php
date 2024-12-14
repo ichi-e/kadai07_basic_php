@@ -17,4 +17,13 @@
     <header>
         <h1><img src="img/logo.png" alt=""></h1>
         <p>子供とタビする</p>
+
+        <nav>
+            <input type="checkbox" class="menu-btn" id="menu-btn">
+            <label for="menu-btn" class="menu-icon"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a href="input.php">登録する</a></li>
+                <li><a href="index.php"> TOP</a></li>
+            </ul>
+        </nav>
     </header>

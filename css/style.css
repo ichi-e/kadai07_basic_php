@@ -208,3 +208,94 @@ form label input {
     text-align: center;
     margin: 100px 0;
 }
+
+/* nav */
+.menu {
+    position: absolute;
+    width: 30%;
+    height: auto;
+    top: 20px;
+    right: 0;
+    margin-top: 50px;
+    padding: 0 0 10px 0;
+    transition: 0.3s linear;
+    transform: scale(1, 0);
+    transform-origin: top;
+    background: #fff;
+    z-index: 999;
+}
+
+.menu li {
+    border-bottom: 1px solid rgb(75, 75, 75);
+    padding: 15px 0;
+    margin: 0 54px;
+}
+
+/* メニューボタン */
+.menu-btn {
+    display: none;
+}
+
+.menu-btn:checked~.menu {
+    transform: scale(1, 1);
+    transform-origin: top;
+    transition: 0.3 linear;
+}
+
+.menu-icon {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navicon {
+    background: #333;
+    display: block;
+    height: 3px;
+    width: 26px;
+    position: relative;
+    transition: 0.3 linear;
+    z-index: 2;
+}
+
+.navicon:before,
+.navicon:after {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: #333;
+    transition: 0.3s linear;
+}
+
+.navicon::before {
+    top: 9px;
+}
+
+.navicon:after {
+    bottom: 9px;
+}
+
+/* ハンバーガーメニューアニメーション */
+.menu-btn:checked~.menu-icon .navicon:before {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.menu-btn:checked~.menu-icon .navicon:after {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+
+.menu-btn:checked~.menu-icon .navicon {
+    background: rgba(0, 0, 0, 0);
+    transition: 0.2s linear;
+}
